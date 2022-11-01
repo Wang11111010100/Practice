@@ -1,0 +1,63 @@
+介绍
+{以下是对一些新学知识的练习 一是希望记录自己的成长过程 二是希望和路过的新手一起练习 最后是希望使路过的大牛回想起一些有趣的经历}
+
+练习一：设计一个函数，使其可以用来交换两个数的位置。
+
+#include <stdio.h>
+
+void int_swapf(int* x, int* y)
+{
+int i1 = 0;
+
+i1 = *x;
+*x = *y;
+*y = i1;
+
+}
+
+int main()
+{
+int i1 = 0, i2 = 0;
+
+printf("请输入两个需要交换的数：");
+
+scanf("%d%d", &i1, &i2);
+
+printf("\n交换前：A=%d B=%d\n\n",i1,i2);
+
+int_swapf(&i1, &i2);
+
+printf("交换后：A=%d B=%d\n", i1, i2);
+
+return 0;
+}
+练习二：设计一个函数，并利用它找出从一到一百中的所有素数。
+
+#include <stdio.h>
+
+  int seekprimef(int n)
+{
+  int j = 0;
+  for (j = 2; j < n; j++)
+  {
+	  if (n % j == 0)
+      return 0;
+  }
+  return 1;
+
+
+  }    
+
+
+int main()
+{
+  int i1 = 0;
+  int i2 = 0;
+
+
+  for (i1 = 1; i1 <= 100; i1++)
+    {
+	  if (seekprimef(i1) == 1)
+		  i2++;
+		  printf("\n第%d素数：%d", i2, i1);
+}
