@@ -31,6 +31,9 @@ printf("交换后：A=%d B=%d\n", i1, i2);
 
 return 0;
 }
+
+
+
 练习二：设计一个函数，并利用它找出从一到一百中的所有素数。
 
 #include <stdio.h>
@@ -61,3 +64,56 @@ int main()
 		  i2++;
 		  printf("\n第%d素数：%d", i2, i1);
 }
+
+
+
+练习三：设计一个二分查找函数，用它找出一个有序整形数组中的某个数。
+
+#include<stdio.h>
+
+int binary_searchf (int a[],int x,int y)
+{
+	int lift = 0;
+	int right = y - 1;
+	int middle = (lift + right) / 2;
+
+	for (; lift < right; middle = (lift + right) / 2)
+	{
+
+		if (a[middle] < x)
+		{
+			lift = middle;
+		}
+		else if (a[middle] > x)
+		{
+			right = middle;
+		}
+		else return middle;
+	}
+	
+
+	return -1;
+}
+
+int main()
+{
+	int arr[] = { 1,2,3,4,5,6,7,8,9 };
+	int i1 = 0;  //目标数
+	int i2 = sizeof（arr） / sizeof（arr[0]）;
+
+	scanf("%d", &i1);
+	if (binary_searchf(arr, i1, i2) == -1)
+		printf("没找到\n");
+	else	printf（“目标数的下标是 %d”， binary_searchf（arr， i1， i2））;
+		
+
+
+
+	return 0;
+}
+
+	
+	
+	
+	
+	
